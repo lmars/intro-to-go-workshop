@@ -111,3 +111,94 @@
     func main() {
       greeter.PrintHello()
     }
+
+<!SLIDE>
+
+# Variables
+
+## Declaration
+
+    var i int
+
+## Declaration + Allocation
+
+    var i int = 10
+
+    var i = 10
+
+    i := 10
+
+<!SLIDE>
+
+# Types
+
+* `int`, `int32`, `uint`, `byte` (alias for `uint8`)
+* `float32`, `float64`
+* `string` (e.g. `"Hello, world!"`)
+* `bool` (`true` and `false`)
+
+<!SLIDE>
+
+# `struct`
+
+    type Rectangle struct {
+      Width  int
+      Height int
+    }
+
+    rect := Rectangle{Width: 10, Height: 20}
+
+    fmt.Println("rect.Width:", rect.Width)
+    fmt.Println("rect.Height:", rect.Height)
+
+<!SLIDE>
+
+# Task
+
+1. Define types representing the following shapes:
+
+    * Rectangle
+
+    * Circle
+
+    * Square
+
+2. Create an executable which prints their dimensions
+
+<!SLIDE>
+
+# Methods
+
+    type Rectangle struct {
+      Width  int
+      Height int
+    }
+
+    func (r Rectangle) Area() float64 {
+        return float64(r.Width * r.Height)
+    }
+
+    rect := Rectangle{Width: 10, Height: 20}
+    fmt.Println("rect.Area:", rect.Area())
+
+<!SLIDE>
+
+# Interfaces
+
+## Interfaces are types which contain a set of methods
+
+    type Shape interface {
+      Area() float64
+    }
+
+## Any type having those methods "implements" the interface
+
+## Can be used as function arguments
+
+<!SLIDE>
+
+# Task
+
+1. Make your shapes implement the `Shape` interface
+
+2. Write a function which prints the area of any `Shape`
