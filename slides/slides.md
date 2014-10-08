@@ -59,3 +59,55 @@
     func main() {
         fmt.Println("Hello, world!")
     }
+
+<!SLIDE>
+
+# Hello, world!
+
+    $ cd $GOPATH/src/github.com/lmars/hello
+
+    $ go run main.go
+    Hello, world!
+
+<!SLIDE>
+
+# Packages
+
+    package main
+
+* All Go code belongs to a package
+* Acts as a namespace
+* The `main` package is used for executables
+* Other package names are libraries to be imported
+
+<!SLIDE>
+
+# Library
+
+    # $GOPATH/src/github.com/lmars/greeter
+
+    # greeter.go
+
+    package greeter
+
+    import "fmt"
+
+    func PrintHello() {
+      fmt.Println("Hello, world!")
+    }
+
+<!SLIDE>
+
+# Library
+
+    # $GOPATH/src/github.com/lmars/hello
+
+    # main.go
+
+    package main
+
+    import "github.com/lmars/greeter"
+
+    func main() {
+      greeter.PrintHello()
+    }
