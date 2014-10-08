@@ -136,6 +136,7 @@
 * `float32`, `float64`
 * `string` (e.g. `"Hello, world!"`)
 * `bool` (`true` and `false`)
+* functions (e.g. `func(int, int) float32`)
 
 <!SLIDE>
 
