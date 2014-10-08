@@ -203,3 +203,58 @@
 1. Make your shapes implement the `Shape` interface
 
 2. Write a function which prints the area of any `Shape`
+
+<!SLIDE>
+
+# Web Server
+
+    package main
+
+    import (
+      "log"
+      "net/http"
+    )
+
+    func main() {
+      log.Println("Listening on :8000")
+      http.ListenAndServe(":8000", nil)
+    }
+
+<!SLIDE>
+
+# HTTP Handlers
+
+    # in net/http package
+
+    type Handler interface {
+      ServeHTTP(ResponseWriter, *Request)
+    }
+
+---
+
+    func Handle(string, Handler)
+
+---
+
+    func HandleFunc(
+      string,
+      func(ResponseWriter, *Request)
+    )
+
+<!SLIDE>
+
+# HTTP Handlers
+
+    func handler(
+      w http.ResponseWriter,
+      req *http.Request
+    ) {
+      response := []byte("ok")
+      w.Write(response)
+    }
+
+    func main() {
+      log.Println("Listening on :8000")
+      http.HandleFunc("/", handler)
+      http.ListenAndServe(":8000", nil)
+    }
