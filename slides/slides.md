@@ -120,7 +120,7 @@
 
     var i int
 
-## Declaration + Allocation
+## Declaration + Assignment
 
     var i int = 10
 
